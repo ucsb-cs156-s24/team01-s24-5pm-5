@@ -27,7 +27,7 @@ To deploy this application to Heroku:
    not `Procfile.txt`).  It will contain something like this:
 
    ```
-   web: java $JAVA_OPTS -cp target/hello-1.0.0.jar edu.ucsb.cs156.spring.hello.Application
+   web: java $JAVA_OPTS -cp target/hello-1.0.0.jar edu.ucsb.cs156.spring.backenddemo.Application
    ```
 
    Here's the short explanation of how to check if the contents of this file are correct:
@@ -35,7 +35,7 @@ To deploy this application to Heroku:
    * Do a `mvn clean package` in your repo
    * Then, type in the command you see *without* the `web:` and `$JAVA_OPTS` parts, e.g.
      ```
-     java -cp target/hello-1.0.0.jar edu.ucsb.cs156.spring.hello.Application
+     java -cp target/hello-1.0.0.jar edu.ucsb.cs156.spring.backenddemo.Application
      ```
      If this starts up the application on `http://localhost:8080` then the line is
      likely correct.
@@ -83,11 +83,11 @@ Here's a longer explanation of the `Procfile`:
   To be sure what you have is correct, run `mvn package` and then type `ls target`
   to make sure that you have the name of the `.jar` file correct.
 
-* The `edu.ucsb.cs156.spring.hello.Application` part is the full package and class
+* The `edu.ucsb.cs156.spring.backenddemo.Application` part is the full package and class
   name of the class in your Spring Boot application that contains the main, e.g.
 
   ```java
-  package edu.ucsb.cs156.spring.hello;
+  package edu.ucsb.cs156.spring.backenddemo;
 
   import org.springframework.boot.SpringApplication;
   import org.springframework.boot.autoconfigure.SpringBootApplication;
