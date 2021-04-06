@@ -1,4 +1,4 @@
-package edu.ucsb.cs156.spring.hello;
+package edu.ucsb.cs156.spring.backenddemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

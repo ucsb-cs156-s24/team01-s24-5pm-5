@@ -1,8 +1,13 @@
-package edu.ucsb.cs156.spring.hello;
+package edu.ucsb.cs156.spring.backenddemo.controllers;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,15 +22,16 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class HelloControllerTest {
+public class HomeControllerTests {
 
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void getHello() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Greetings from Spring Boot!")));
+    public void getHome() throws Exception {
+        String expectedBody = HomeController.getHomePageObjectJSON();
+        mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
+                .andExpect(content().string(equalTo(expectedBody)));
     }
+    
 }
