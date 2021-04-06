@@ -1,35 +1,29 @@
-# STARTER-jpa02
+# STARTER-team01
 
 * TODO: Change the title of this README 
-  in the text `# STARTER-jpa02` above
-  to match the name of your repo, i. e., `lab02-yourgithubid`, then delete
+  in the text `# STARTER-team01` above
+  to match the name of your repo, i. e., `s21-5pm-2-team01`, then delete
   this TODO item.
 
 * TODO: Correct the links to repo below, 
   then delete this TODO.  Replace it with 
   a link to your repo, e.g. 
-  https://github.com/ucsb-cs156-s21/jpa02-cgaucho
+  https://github.com/ucsb-cs156-s21/s21-5pm-2-team01
 
-Repo: https://ucsb-cs156-s21/STARTER-jpa02
+Repo: https://ucsb-cs156-s21/STARTER-team01
 
 * TODO: Correct the links to app on Heroku below, 
   then delete this TODO.  Replace it with 
   a link to your running app on Heroku, e.g.
-  https://cs156-s21-jpa02-cgaucho.herokuapp.com
+  https://cs156-s21-5pm-2-team01.herokuapp.com
 
 
-On Heroku: https://cs156-s21-jpa02-cgaucho.herokuapp.com
-
-* TODO: Correct the links to codecov report below
-  then delete this TODO.  Replace it with 
-  a link to your codecov report.
-
-On Codecov: https://codecov.io/gh/ucsb-cs156-s21/jpa02-cgaucho
+On Heroku: https://cs156-s21-5pm-2-team01.herokuapp.com
 
 
 # About this repo
 
-This is a minimal "Hello World" type webapp built with Spring Boot.
+This is a minimal backend only webapp built with Spring Boot.
 
 
 # What can you do with this code?
@@ -42,7 +36,7 @@ This is a minimal "Hello World" type webapp built with Spring Boot.
 | `mvn test org.pitest:pitest-maven:mutationCoverage` | Runs JUnit tests, and if all tests pass, runs pit (pitest.org) mutation testing to measure effectivness of test suite |
 | `mvn package` | Builds the jar file `target/gs-spring-boot-0.1.0.jar` |
 | `mvn spring-boot:run` | Runs the code to startup a web server.  Access it via `http://localhost:8080` on the *same machine* where the server is running.  Use CTRL/C to stop it. |
-| `java -cp target/hello-1.0.0.jar edu.ucsb.cs156.spring.hello.Application` | If done after `mvn package`, runs the code to startup a web server.  |
+| `java -cp target/backend-1.0.0.jar edu.ucsb.cs156.spring.hello.Application` | If done after `mvn package`, runs the code to startup a web server.  |
 | `java -jar target/hello-1.0.0.jar | If done after `mvn package`, this is another way to start up the web server.|
 
 

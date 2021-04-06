@@ -16,7 +16,7 @@
 
   <!-- (3) <artifactId/> -->
 
-  <artifactId>hello</artifactId>
+  <artifactId>backend</artifactId>
 
   <!-- (4) <version/> -->
   <version>1.0.0</version>
