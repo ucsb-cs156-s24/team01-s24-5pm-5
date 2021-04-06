@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -29,7 +26,7 @@ public class EarthquakesController {
     EarthquakeQueryService earthquakeQueryService;
 
     @GetMapping("/get")
-    public ResponseEntity<String> getEartquakes(
+    public ResponseEntity<String> getEarthquakes(
         @RequestParam String distance,
         @RequestParam String minMag
     ) throws JsonProcessingException {
