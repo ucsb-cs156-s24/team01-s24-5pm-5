@@ -38,7 +38,4 @@ public class EarthquakesController {
         return ResponseEntity.ok().body(result);
     }
 
-
-
-    
 }
