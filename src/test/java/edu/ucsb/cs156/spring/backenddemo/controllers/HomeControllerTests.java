@@ -29,7 +29,7 @@ public class HomeControllerTests {
 
     @Test
     public void getHome() throws Exception {
-        String expectedBody = HomeController.getHomePageObjectJSON();
+        String expectedBody = HomeController.getHomePageObjectJSON("http://localhost/");
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
                 .andExpect(content().string(equalTo(expectedBody)));
     }
