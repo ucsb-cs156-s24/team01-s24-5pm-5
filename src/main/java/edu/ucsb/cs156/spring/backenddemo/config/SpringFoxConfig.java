@@ -1,5 +1,7 @@
 package edu.ucsb.cs156.spring.backenddemo.config;
 
+import java.util.function.Predicate;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -20,8 +22,8 @@ public class SpringFoxConfig {
     public Docket api() { 
         return new Docket(DocumentationType.SWAGGER_2)  
           .select()                                  
-          .apis(RequestHandlerSelectors.any())              
-          .paths(PathSelectors.any())                          
+          .apis(RequestHandlerSelectors.any())  
+          .paths(Predicate.not(PathSelectors.regex("/error.*")))//<6>, regex must be in double quotes.            
           .build();                                           
     }
 }
