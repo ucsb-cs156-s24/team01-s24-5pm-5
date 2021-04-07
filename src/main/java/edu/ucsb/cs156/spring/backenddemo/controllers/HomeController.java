@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.http.ResponseEntity;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -36,6 +38,18 @@ public class HomeController {
 
         Map<String, Object> resultMap = new HashMap<String, Object>();
         resultMap.put("greeting","Greetings from Spring Boot");
+
+        List<String> team = new ArrayList<String>();
+        team.add("Andrew L.");
+        team.add("Bryan T.");
+        team.add("Calvin J.");
+        team.add("Jacqui M.");
+        team.add("Mara D.");
+        team.add("Max L.");
+        team.add("Phill C.");
+        team.add("Wade V.");
+        resultMap.put("team",team);
+        resultMap.put("repo","https://github.com/ucsb-cs156-s21/STARTER-team01");
         resultMap.put("api-documentation", baseUrl + "swagger-ui/");
         return mapper.writeValueAsString(resultMap);
     }
