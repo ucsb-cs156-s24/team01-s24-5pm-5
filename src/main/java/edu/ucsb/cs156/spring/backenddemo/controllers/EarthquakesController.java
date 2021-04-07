@@ -14,7 +14,11 @@ import org.springframework.http.ResponseEntity;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
+@Api(description="Earthquake info from USGS")
 @Slf4j
 @RestController
 @RequestMapping("/api/earthquakes")
@@ -25,10 +29,11 @@ public class EarthquakesController {
     @Autowired
     EarthquakeQueryService earthquakeQueryService;
 
+    @ApiOperation(value = "Get earthquakes a certain distance from UCSB's Storke Tower", notes = "JSON return format documented here: https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php")
     @GetMapping("/get")
     public ResponseEntity<String> getEarthquakes(
-        @RequestParam String distance,
-        @RequestParam String minMag
+        @ApiParam("distance in km, e.g. 100") @RequestParam String distance,
+        @ApiParam("minimum magnitude, e.g. 2.5") @RequestParam String minMag
     ) throws JsonProcessingException {
         log.info("getEarthquakes: distance={} minMag={}", distance, minMag);
         String result = earthquakeQueryService.getJSON(distance, minMag);
