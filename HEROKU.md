@@ -6,19 +6,14 @@ To deploy this application to Heroku:
 
    You should not need to enter a credit card, but you may need to verify your email.
 
+   To avoid confusion, and ensure you get credit for your work, 
+   please use your `___@ucsb.edu` email.
+
 2. Login to your Heroku account and navigate to the Heroku Dashboard.
 
-   Create a new Heroku Application with the name `jpa02-cgaucho`, substituting
-   your UCSB email address (without the `@ucsb.edu`) part in place of `cgaucho`.
-
-   Example: `jpa02-cgaucho`
-
-   Note that the autograder for this assignment *assumes that you will use exactly this name* for your Heroku application.
-   
-   So, if you find that you cannot  GitHub id is too long, or the application name is already taken, for now,
-   modify your application name as needed, and then make a post on the `#help-jpa02`
-   channel on the course Slack.  We will have to put special case code in the autograder
-   to account for this, or else just check that part of your grade manually.
+   Create a new Heroku Application with the *exact* name specified in the assignment.
+   It is important to follow that naming convention to ensure that the graders can
+   find your work.
    
 3. Ensure that your repo contains a `Procfile` with appropriate contents, as explained below.
 
@@ -27,7 +22,7 @@ To deploy this application to Heroku:
    not `Procfile.txt`).  It will contain something like this:
 
    ```
-   web: java $JAVA_OPTS -cp target/hello-1.0.0.jar edu.ucsb.cs156.spring.backenddemo.Application
+   web: java $JAVA_OPTS -cp target/demo-spring-backend-1.0.0.jar edu.ucsb.cs156.spring.backenddemo.Application
    ```
 
    Here's the short explanation of how to check if the contents of this file are correct:
@@ -35,7 +30,7 @@ To deploy this application to Heroku:
    * Do a `mvn clean package` in your repo
    * Then, type in the command you see *without* the `web:` and `$JAVA_OPTS` parts, e.g.
      ```
-     java -cp target/hello-1.0.0.jar edu.ucsb.cs156.spring.backenddemo.Application
+     java -cp target/demo-spring-backend-1.0.0.jar edu.ucsb.cs156.spring.backenddemo.Application
      ```
      If this starts up the application on `http://localhost:8080` then the line is
      likely correct.
@@ -47,7 +42,7 @@ To deploy this application to Heroku:
 
    Navigate to <https://dashboard.heroku.com/> and login with your account.
 
-   If not already there, select the application you created (e.g. `jpa02-cgaucho`).
+   If not already there, select the application you created.
 
    You will see a `Deploy` tab.   Click on this, and you'll then see a GitHub button
    towards the middle of the screen. Click on this, and you'll have an opportunity to
@@ -60,8 +55,7 @@ To deploy this application to Heroku:
    It may take a while (e.g. 5 minutes) before the process is finished.  When it is
    finished, you should be able to navigate to your repo either by pressing the
    `Open App` button at the upper right hand corner of the Dashboard interface, or
-   by navigating to <https://your-app-name.herokuapp.com> (where `your-app-name` is
-   replaced by, for example, `jpa02-cgaucho`.)
+   by navigating to <https://your-app-name.herokuapp.com>.
 
    
 
@@ -76,7 +70,7 @@ Here's a longer explanation of the `Procfile`:
   * The `$JAVA_OPTS` part is necessary for Heroku to ensure that
     the the Java Virtual Machine (JVM) is configured appropriately for Heroku.
 
-* The `-cp target/hello-1.0.0.jar` part should be changed based on the name of the
+* The `-cp target/demo-spring-backend-1.0.0.jar` part should be changed based on the name of the
   the `.jar` file produced when you type `mvn package`.  This may change if the
   the `artifact` and/or `version` elements in the `pom.xml` are altered.
 

@@ -3,6 +3,8 @@ package edu.ucsb.cs156.spring.backenddemo.controllers;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,14 +19,15 @@ import java.util.Map;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+@Api(description="Home Page with links to documentation")
 @Slf4j
 @RestController
 public class HomeController {
     
-
+    @ApiOperation(value = "Get general info about the server, including link to api documentation")
     @GetMapping("/")
     public ResponseEntity<String> getHome() throws JsonProcessingException {
-
+        log.info("Home Page accessed");
         ServletUriComponentsBuilder builder = ServletUriComponentsBuilder.fromCurrentRequestUri();
         // builder.scheme("http");
         URI uri = builder.build().toUri();

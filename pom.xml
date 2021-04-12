@@ -81,6 +81,14 @@
       <version>3.0.0</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
+    <dependency>
+      <groupId>com.opencsv</groupId>
+      <artifactId>opencsv</artifactId>
+      <version>5.4</version>
+    </dependency>
+
+
   </dependencies>
 
   <!-- (24) <repositories/> -->
@@ -137,7 +145,7 @@
       <plugin>
         <groupId>org.pitest</groupId>
         <artifactId>pitest-maven</artifactId>
-        <version>1.5.2</version>
+        <version>1.6.4</version>
         <configuration>
           <targetClasses>
             <param>edu.*</param>
