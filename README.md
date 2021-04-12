@@ -1,5 +1,19 @@
 # STARTER-team01
 
+* TODO: Update the following table, then delete this line that says "TODO".
+
+```
+|   Name    | GitHub Id |  Service                    | Controller                |
+|-----------|-----------|-----------------------------|---------------------------| 
+|           |           | `LocationQueryService`      | `LocationController`      |   
+|           |           | `PublicHolidayQueryService` | `PublicHolidayController` |   
+|           |           | `RedditQueryService`        | `RedditController`        |   
+|           |           | `TidesQueryService`         | `TidesController`         |   
+|           |           | `UniversityQueryService`    | `UniversityController`    |
+|           |           | `ZipCodeQueryService`       | `ZipCodeController`       |
+```
+
+
 * TODO: Change the title of this README 
   in the text `# STARTER-team01` above
   to match the name of your repo, i. e., `s21-5pm-2-team01`, then delete
