@@ -1,5 +1,7 @@
 # STARTER-team01
 
+Lab instructions: <https://ucsb-cs156.github.io/s21/lab/team01/>
+
 * TODO: Update the following table, then delete this line that says "TODO".
 
 ```
