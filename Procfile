@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/demo-spring-backend-1.0.0.jar edu.ucsb.cs156.spring.backenddemo.Application
+web: java $JAVA_OPTS -jar target/demo-spring-backend-1.0.0.jar
