@@ -38,7 +38,7 @@ public class EarthquakeQueryService {
         headers.setAccept(List.of(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        HttpEntity<String> entity = new HttpEntity<>("body", headers);
+        HttpEntity<String> entity = new HttpEntity<>(headers);
 
         String ucsbLat = "34.4140"; // hard coded params for Storke Tower
         String ucsbLong = "-119.8489";
