@@ -41,7 +41,7 @@ public class CollegeSubredditQueryService {
         headers.setAccept(List.of(MediaType.TEXT_PLAIN));
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        HttpEntity<String> entity = new HttpEntity<>("body", headers);
+        HttpEntity<String> entity = new HttpEntity<>(headers);
 
         ResponseEntity<String> re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class);
         String csvData =  re.getBody();
