@@ -40,20 +40,20 @@ public class HomeController {
         ObjectMapper mapper = new ObjectMapper();
 
         Map<String, Object> resultMap = new HashMap<String, Object>();
-        resultMap.put("greeting","Greetings from Spring Boot");
+        resultMap.put("greeting","Greetings from Spring Boot!");
 
         List<String> team = new ArrayList<String>();
         team.add("Andrew L.");
         team.add("Bryan T.");
-        team.add("Calvin J.");
-        team.add("Jacqui M.");
-        team.add("Mara D.");
-        team.add("Max L.");
+        team.add("Bryan Z.");
+        team.add("Kevin H.");
+        team.add("Seth V.");
         team.add("Phill C.");
-        team.add("Wade V.");
+        team.add("Pranav M.");
         resultMap.put("team",team);
-        resultMap.put("repo","https://github.com/ucsb-cs156-s21/STARTER-team01");
+        resultMap.put("repo","https://github.com/ucsb-cs156-w22/STARTER-team01");
         resultMap.put("api-documentation", baseUrl + "swagger-ui/");
+        resultMap.put("actuator", baseUrl + "actuator/");
         return mapper.writeValueAsString(resultMap);
     }
 }
