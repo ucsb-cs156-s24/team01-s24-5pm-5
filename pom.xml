@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.2.2.RELEASE</version>
+    <version>2.5.2</version>
   </parent>
 
   <!-- (2) <groupId/> -->
@@ -43,7 +43,7 @@
   <!-- (21) <properties/> -->
 
   <properties>
-    <java.version>11</java.version>
+    <java.version>17</java.version>
     <mainClass>edu.ucsb.cs156.spring.backenddemo.Application</mainClass>
   </properties>
 
@@ -54,6 +54,11 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
 
     <dependency>
@@ -87,8 +92,6 @@
       <artifactId>opencsv</artifactId>
       <version>5.4</version>
     </dependency>
-
-
   </dependencies>
 
   <!-- (24) <repositories/> -->
@@ -110,7 +113,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>3.1.2</version>
+        <version>3.2.0</version>
         <configuration>
           <archive>
             <manifest>
@@ -125,7 +128,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.5</version>
+        <version>0.8.7</version>
         <executions>
           <execution>
             <goals>
@@ -145,14 +148,25 @@
       <plugin>
         <groupId>org.pitest</groupId>
         <artifactId>pitest-maven</artifactId>
-        <version>1.6.4</version>
+        <version>1.7.3</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-junit5-plugin</artifactId>
+            <version>0.14</version>
+          </dependency>
+        </dependencies>
         <configuration>
+          <verbose>true</verbose>
           <targetClasses>
-            <param>edu.*</param>
+            <param>edu.ucsb.cs156.*</param>
           </targetClasses>
           <targetTests>
-            <param>edu.*</param>
+            <param>edu.ucsb.cs156.*</param>
           </targetTests>
+          <excludedTestClasses>
+            <param>edu.ucsb.cs156.spring.hello.ApplicationTest</param>
+          </excludedTestClasses>
           <outputFormats>
             <outputFormat>HTML</outputFormat>
             <outputFormat>CSV</outputFormat>
@@ -161,6 +175,13 @@
         </configuration>
       </plugin>
 
+      <!-- needed to get JUnit 5 tests to run -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <!-- JUnit 5 requires Surefire version 2.22.0 or higher -->
+        <version>2.22.0</version>
+      </plugin>
 
     </plugins>
   </build>
