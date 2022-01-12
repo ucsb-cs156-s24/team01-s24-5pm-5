@@ -1,6 +1,6 @@
 # STARTER-team01
 
-Lab instructions: <https://ucsb-cs156.github.io/s21/lab/team01/>
+Lab instructions: <https://ucsb-cs156.github.io/w22/lab/team01/>
 
 * TODO: Update the following table, then delete this line that says "TODO".
 
@@ -18,26 +18,32 @@ Lab instructions: <https://ucsb-cs156.github.io/s21/lab/team01/>
 
 * TODO: Change the title of this README 
   in the text `# STARTER-team01` above
-  to match the name of your repo, i. e., `s21-5pm-2-team01`, then delete
+  to match the name of your repo, i. e., `w22-5pm-2-team01`, then delete
   this TODO item.
 
 * TODO: Correct the links to repo below, 
   then delete this TODO.  Replace it with 
   a link to your repo, e.g. 
-  https://github.com/ucsb-cs156-s21/s21-5pm-2-team01
+  https://github.com/ucsb-cs156-w22/w22-5pm-2-team01
 
-Repo: https://ucsb-cs156-s21/STARTER-team01
+Repo: https://ucsb-cs156-w22/STARTER-team01
 
 * TODO: Correct the links to app on Heroku below, 
   then delete this TODO.  Replace it with 
   a link to your running app on Heroku, e.g.
-  https://cs156-s21-5pm-2-team01.herokuapp.com
+  https://cs156-w22-5pm-2-team01.herokuapp.com
 
-On Heroku: https://cs156-s21-5pm-2-team01.herokuapp.com
+On Heroku: https://cs156-w22-5pm-2-team01.herokuapp.com
 
 ## About this repo
 
 This is a minimal backend only webapp built with Spring Boot.
+
+The app provides some sample code for an API, and a Swagger user interface
+to test that API.  The API is essentially a proxy for another API.
+
+This code is the basis for a programming exercise where each student on a
+team of up to 6 students can build a proxy similar to the one in the example code.
 
 ## What can you do with this code?
 
