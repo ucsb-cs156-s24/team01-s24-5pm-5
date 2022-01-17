@@ -2,6 +2,7 @@ package edu.ucsb.cs156.spring.backenddemo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.client.MockRestServiceServer;
 
@@ -12,6 +13,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
+
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.header;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
@@ -55,10 +58,13 @@ public class CollegeSubredditQueryServiceTests {
 
         ObjectMapper mapper = new ObjectMapper();
         String expectedJSON = mapper.writeValueAsString(subreddits);
-        
+
         java.net.URI uri = new java.net.URI(expectedURL);
 
-        this.mockRestServiceServer.expect(requestTo(uri)).andRespond(withSuccess(fakeCSVData, MediaType.TEXT_PLAIN));
+        this.mockRestServiceServer.expect(requestTo(uri))
+                .andExpect(header("Accept", "text/plain"))
+                .andExpect(header("Content-Type", MediaType.APPLICATION_JSON.toString()))
+                .andRespond(withSuccess(fakeCSVData, MediaType.TEXT_PLAIN));
 
         String actualResult = collegeSubredditQueryService.getJSON();
         assertEquals(expectedJSON, actualResult);

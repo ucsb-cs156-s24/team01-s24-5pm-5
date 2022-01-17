@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.header;
 
 @RestClientTest(EarthquakeQueryService.class)
 public class EarthquakeQueryServiceTests {
@@ -28,11 +29,13 @@ public class EarthquakeQueryServiceTests {
         String ucsbLat = "34.4140"; // hard coded params for Storke Tower
         String ucsbLong = "-119.8489";
         String expectedURL = EarthquakeQueryService.ENDPOINT.replace("{distance}", distance)
-                .replace("{minMag}",minMag).replace("{latitude}",ucsbLat).replace("{longitude}",ucsbLong);
+                .replace("{minMag}", minMag).replace("{latitude}", ucsbLat).replace("{longitude}", ucsbLong);
 
-        String fakeJsonResult="{ \"fake\" : \"result\" }";
+        String fakeJsonResult = "{ \"fake\" : \"result\" }";
 
         this.mockRestServiceServer.expect(requestTo(expectedURL))
+                .andExpect(header("Accept", MediaType.APPLICATION_JSON.toString()))
+                .andExpect(header("Content-Type", MediaType.APPLICATION_JSON.toString()))
                 .andRespond(withSuccess(fakeJsonResult, MediaType.APPLICATION_JSON));
 
         String actualResult = earthquakeQueryService.getJSON(distance, minMag);
