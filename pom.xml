@@ -165,13 +165,21 @@
             <param>edu.ucsb.cs156.*</param>
           </targetTests>
           <excludedTestClasses>
-            <param>edu.ucsb.cs156.spring.hello.ApplicationTest</param>
+            <param>edu.ucsb.cs156.spring.backenddemo.ApplicationTests</param>
+            <param>edu.ucsb.cs156.spring.backenddemo.config.SpringFoxConfig</param>
           </excludedTestClasses>
           <outputFormats>
             <outputFormat>HTML</outputFormat>
             <outputFormat>CSV</outputFormat>
             <outputFormat>XML</outputFormat>
           </outputFormats>
+          <avoidCallsTo>
+            <avoidCallsTo>java.util.logging</avoidCallsTo>
+            <avoidCallsTo>org.apache.log4j</avoidCallsTo>
+            <avoidCallsTo>org.slf4j</avoidCallsTo>
+            <avoidCallsTo>org.apache.commons.logging</avoidCallsTo>
+          </avoidCallsTo>
+          <timestampedReports>false</timestampedReports>
         </configuration>
       </plugin>
 
