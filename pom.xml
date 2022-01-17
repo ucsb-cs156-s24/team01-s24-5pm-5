@@ -164,9 +164,11 @@
           <targetTests>
             <param>edu.ucsb.cs156.*</param>
           </targetTests>
+          <excludedClasses>
+            <param>edu.ucsb.cs156.spring.backenddemo.config.SpringFoxConfig</param>
+          </excludedClasses>
           <excludedTestClasses>
             <param>edu.ucsb.cs156.spring.backenddemo.ApplicationTests</param>
-            <param>edu.ucsb.cs156.spring.backenddemo.config.SpringFoxConfig</param>
           </excludedTestClasses>
           <outputFormats>
             <outputFormat>HTML</outputFormat>

@@ -35,9 +35,10 @@ public class CountryCodeControllerTests {
   public void test_getCountryCodes() throws Exception {
   
     String fakeJsonResult="{ \"fake\" : \"result\" }";
-    when(mockCountryCodeQueryService.getJSON()).thenReturn(fakeJsonResult);
+    String country = "United States";
+    when(mockCountryCodeQueryService.getJSON(eq(country))).thenReturn(fakeJsonResult);
 
-    String url = String.format("/api/countrycodes/get");
+    String url = String.format("/api/countrycodes/get?country=%s", country);
 
     MvcResult response = mockMvc
         .perform( get(url).contentType("application/json"))

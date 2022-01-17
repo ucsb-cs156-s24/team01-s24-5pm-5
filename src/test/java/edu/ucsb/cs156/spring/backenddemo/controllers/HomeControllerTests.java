@@ -41,7 +41,6 @@ public class HomeControllerTests {
     @Test
     public void test_getHomePageObjectJSON() throws Exception {
 
-
         ObjectMapper mapper = new ObjectMapper();
 
         Map<String, Object> resultMap = new HashMap<String, Object>();

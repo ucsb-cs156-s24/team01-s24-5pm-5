@@ -30,17 +30,20 @@ public class CountryCodeQueryService {
         restTemplate = restTemplateBuilder.build();
     }
 
-    public static final String ENDPOINT = "https://restcountries.eu/rest/v2/all?fields=alpha2Code;name";
+    public static final String ENDPOINT = "https://public.opendatasoft.com/api/records/1.0/search/?dataset=countries-codes&q={country}";
 
-    public String getJSON() throws HttpClientErrorException {
-        log.info("getting json...");
+    public String getJSON(String country) throws HttpClientErrorException {
+        log.info("country={}", country);
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(List.of(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        HttpEntity<String> entity = new HttpEntity<>(headers);
+        Map<String, String> uriVariables = Map.of("country", country);
 
-        ResponseEntity<String> re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class);
+        HttpEntity<String> entity = new HttpEntity<>("body", headers);
+
+        ResponseEntity<String> re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class,
+                uriVariables);
         return re.getBody();
     }
 

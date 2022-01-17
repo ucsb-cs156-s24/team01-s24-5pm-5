@@ -55,3 +55,4 @@ team of up to 6 students can build a proxy similar to the one in the example cod
 | `mvn package` | Builds the jar file `target/gs-spring-boot-0.1.0.jar` |
 | `mvn spring-boot:run` | Runs the code to startup a web server.  Access it via `http://localhost:8080` on the *same machine* where the server is running.  Use CTRL/C to stop it. |
 | `java -jar target/demo-spring-backend-1.0.0.jar` | If done after `mvn package`, this is another way to start up the web server.|
+| `mvn test org.pitest:pitest-maven:mutationCoverage` | Run [pitest mutation coverage](https://pitest.org).  View `target/pit-reports/index.html` for results (may take a few minutes)|
