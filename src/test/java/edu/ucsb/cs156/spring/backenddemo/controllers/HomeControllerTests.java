@@ -57,7 +57,7 @@ public class HomeControllerTests {
         team.add("Phill C.");
         team.add("Pranav M.");
         resultMap.put("team",team);
-        resultMap.put("repo","https://github.com/ucsb-cs156-w22/STARTER-team01");
+        resultMap.put("repo","https://github.com/ucsb-cs156-f22/STARTER-team01");
         resultMap.put("api-documentation", baseUrl + "swagger-ui/");
         resultMap.put("actuator", baseUrl + "actuator/");
         String expected = mapper.writeValueAsString(resultMap);
