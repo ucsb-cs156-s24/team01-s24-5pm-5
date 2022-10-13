@@ -6,4 +6,4 @@ Customize Home Controller and Tests
 
 ## Details
 
-See: <https://ucsb-cs156.github.io/s22/lab/team01/>, step 3.2
+See: <https://ucsb-cs156.github.io/f22/lab/team01/>, step 3.2
