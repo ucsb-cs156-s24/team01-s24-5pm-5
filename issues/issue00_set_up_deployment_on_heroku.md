@@ -8,7 +8,7 @@ Set up a team deployments for prod and qa on Heroku
       deployment.  
 - [ ] All members of the team are added to the Heroku deployment.
 - [ ] The course instructor (`phtcon@ucsb.edu`) and the mentor listed
-      at <https://ucsb-cs156.github.io/f22/info/teams/> is added to
+      at <https://bit.ly/cs156-f22-teams> is added to
       the heroku  deployment. (Ask for the email they use with
       Heroku via slack.)
 

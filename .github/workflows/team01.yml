@@ -203,29 +203,15 @@ jobs:
         project-name: team01
         column-name: Todo
         issue-number: ${{ steps.step14.outputs.issue-number }}
-
     - name: Create Issue 15 From File
       id: step15
       uses: peter-evans/create-issue-from-file@v3
       with:
-        title: Set up codecov token and codecov badge.
-        content-filepath: issues/issue02_codecov_token.md
+        title: Set up a team deployments for prod and qa on Heroku
+        content-filepath: issues/issue00_set_up_deployment_on_heroku.md
     - name: Add Issue 15 to Kanban board team01
       uses: peter-evans/create-or-update-project-card@v1
       with:
         project-name: team01
         column-name: Todo
         issue-number: ${{ steps.step15.outputs.issue-number }}
-
-    - name: Create Issue 16 From File
-      id: step16
-      uses: peter-evans/create-issue-from-file@v3
-      with:
-        title: Set up a team deployments for prod and qa on Heroku
-        content-filepath: issues/issue00_set_up_deployment_on_heroku.md
-    - name: Add Issue 16 to Kanban board team01
-      uses: peter-evans/create-or-update-project-card@v1
-      with:
-        project-name: team01
-        column-name: Todo
-        issue-number: ${{ steps.step16.outputs.issue-number }}
