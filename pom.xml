@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <!-- (0) <modelVersion/> -->
   <modelVersion>4.0.0</modelVersion>
 
   <!-- (1) <parent/> -->
+
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.5.2</version>
+    <version>3.1.1</version>
   </parent>
 
   <!-- (2) <groupId/> -->
@@ -16,7 +19,7 @@
 
   <!-- (3) <artifactId/> -->
 
-  <artifactId>demo-spring-backend</artifactId>
+  <artifactId>team01</artifactId>
 
   <!-- (4) <version/> -->
   <version>1.0.0</version>
@@ -58,11 +61,6 @@
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
@@ -73,18 +71,12 @@
       <optional>true</optional>
     </dependency>
 
-    <!-- https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api -->
+    <!-- https://springdoc.org/ -->
     <dependency>
-      <groupId>io.springfox</groupId>
-      <artifactId>springfox-boot-starter</artifactId>
-      <version>3.0.0</version>
-    </dependency>
-
-    <dependency>
-      <groupId>io.springfox</groupId>
-      <artifactId>springfox-swagger-ui</artifactId>
-      <version>3.0.0</version>
-    </dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <version>2.1.0</version>
+   </dependency>
 
     <!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
     <dependency>
@@ -165,7 +157,7 @@
             <param>edu.ucsb.cs156.*</param>
           </targetTests>
           <excludedClasses>
-            <param>edu.ucsb.cs156.spring.backenddemo.config.SpringFoxConfig</param>
+            <param>edu.ucsb.cs156.spring.backenddemo.config.OpenAPIConfig</param>
           </excludedClasses>
           <excludedTestClasses>
             <param>edu.ucsb.cs156.spring.backenddemo.ApplicationTests</param>

@@ -3,8 +3,8 @@ package edu.ucsb.cs156.spring.backenddemo.controllers;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,12 +19,12 @@ import java.util.Map;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Api(description="Home Page with links to documentation")
+@Tag(name="Home Page with links to documentation")
 @Slf4j
 @RestController
 public class HomeController {
     
-    @ApiOperation(value = "Get general info about the server, including link to api documentation")
+    @Operation(summary = "Get general info about the server, including link to api documentation")
     @GetMapping("/")
     public ResponseEntity<String> getHome() throws JsonProcessingException {
         log.info("Home Page accessed");
@@ -51,9 +51,8 @@ public class HomeController {
         team.add("Phill C.");
         team.add("Pranav M.");
         resultMap.put("team",team);
-        resultMap.put("repo","https://github.com/ucsb-cs156-f22/STARTER-team01");
-        resultMap.put("api-documentation", baseUrl + "swagger-ui/");
-        resultMap.put("actuator", baseUrl + "actuator/");
+        resultMap.put("repo","https://github.com/ucsb-cs156-m23/STARTER-team01");
+        resultMap.put("api-documentation", baseUrl + "/swagger-ui/index.html");
         return mapper.writeValueAsString(resultMap);
     }
 }

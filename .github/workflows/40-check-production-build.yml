@@ -1,22 +1,25 @@
 # This workflow will build a Java project with Maven
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: "10-backend-unit: Java Unit tests"
+name: "40-check-production-build: Check Production Build (if this fails, deploying to Heroku/Dokku will fail)"
 
 on:
   workflow_dispatch:
-  pull_request:
-    paths: [src/**, pom.xml, lombok.config]
   push:
     branches: [ main ]
-    paths: [src/**, pom.xml, lombok.config]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    
+
     steps:
+    - uses: szenius/set-timezone@v1.2
+      with:
+        timezoneLinux: "America/Los_Angeles"
     - uses: actions/checkout@v3.5.2
     - name: Set up Java (version from .java-version file)
       uses: actions/setup-java@v3
@@ -26,6 +29,7 @@ jobs:
   
     - name: Build with Maven
       env:
-        TEST_PROPERTIES: ${{ secrets.TEST_PROPERTIES }}
-      run: mvn -B test 
-      
+        PRODUCTION: true
+      run: mvn -DskipTests clean dependency:list install
+
+  

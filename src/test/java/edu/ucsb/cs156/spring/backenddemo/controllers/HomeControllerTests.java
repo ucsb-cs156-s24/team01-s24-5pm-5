@@ -57,9 +57,8 @@ public class HomeControllerTests {
         team.add("Phill C.");
         team.add("Pranav M.");
         resultMap.put("team",team);
-        resultMap.put("repo","https://github.com/ucsb-cs156-f22/STARTER-team01");
-        resultMap.put("api-documentation", baseUrl + "swagger-ui/");
-        resultMap.put("actuator", baseUrl + "actuator/");
+        resultMap.put("repo","https://github.com/ucsb-cs156-m23/STARTER-team01");
+        resultMap.put("api-documentation", baseUrl + "swagger-ui/index.html");
         String expected = mapper.writeValueAsString(resultMap);
         String actual = HomeController.getHomePageObjectJSON("http://localhost:8080/");
 

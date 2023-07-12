@@ -1,5 +1,6 @@
 
 .factorypath
+.env
 
 # For Java
 *.class
@@ -27,9 +28,4 @@ dependency-reduced-pom.xml
 
 # For MacOS
 .DS_Store
-
-# Application specific secrets files
-
-heroku.json
-localhost.json
 

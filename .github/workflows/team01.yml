@@ -7,32 +7,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Create Issue 1 From File
-      id: step1
+    - name: Create Issue 92 From File
+      id: step92
       uses: peter-evans/create-issue-from-file@v3
       with:
         title: Customize Home Controller and Tests
         content-filepath: issues/issue92_changes_to_README.md
-    - name: Create Issue 2 From File
-      id: step2
+
+    - name: Create Issue 90 From File
+      id: step90
       uses: peter-evans/create-issue-from-file@v3
       with:
         title: Update README with correct information in place of TODO
         content-filepath: issues/issue90_customize_home_controller.md
-    - name: Create Issue 3 From File
-      id: step3
+
+    - name: Create Issue 66 From File
+      id: step66
       uses: peter-evans/create-issue-from-file@v3
       with:
         title: Set up zipcode controller and tests
         content-filepath: issues/issue66_zipcode_controller_and_tests.md
-    - name: Create Issue 4 From File
+
+    - name: Create Issue 62 From File
       id: step4
       uses: peter-evans/create-issue-from-file@v3
       with:
         title: Set up zipcode service and tests
         content-filepath: issues/issue62_zipcode_service_and_tests.md
 
-    - name: Create Issue 5 From File
+    - name: Create Issue 56 From File
       id: step5
       uses: peter-evans/create-issue-from-file@v3
       with:
@@ -40,76 +43,61 @@ jobs:
         content-filepath: issues/issue56_university_controller_and_tests.md
       
 
-    - name: Create Issue 6 From File
-      id: step6
+    - name: Create Issue 52 From File
+      id: step52
       uses: peter-evans/create-issue-from-file@v3
       with:
         title: Set up university service and tests
         content-filepath: issues/issue52_university_service_and_tests.md
       
-    - name: Create Issue 7 From File
-      id: step7
+    - name: Create Issue 46 From File
+      id: step46
       uses: peter-evans/create-issue-from-file@v3
       with:
         title: Set up tides controller and tests
         content-filepath: issues/issue46_tides_controller_and_tests.md
       
-    - name: Create Issue 8 From File
-      id: step8
+    - name: Create Issue 42 From File
+      id: step42
       uses: peter-evans/create-issue-from-file@v3
       with:
         title: Set up tides service and tests
         content-filepath: issues/issue42_tides_service_and_tests.md
-      
-    - name: Create Issue 9 From File
-      id: step9
-      uses: peter-evans/create-issue-from-file@v3
-      with:
-        title: Set up reddit controller and tests
-        content-filepath: issues/issue36_reddit_controller_and_tests.md
-      
-
-    - name: Create Issue 10 From File
-      id: step10
-      uses: peter-evans/create-issue-from-file@v3
-      with:
-        title: Set up reddit service and tests
-        content-filepath: issues/issue32_reddit_service_and_tests.md
-       
-    - name: Create Issue 11 From File
-      id: step11
+            
+    - name: Create Issue 26 From File
+      id: step26
       uses: peter-evans/create-issue-from-file@v3
       with:
         title: Set up public holiday controller and tests
         content-filepath: issues/issue26_holiday_controller_and_tests.md
       
-    - name: Create Issue 12 From File
-      id: step12
+    - name: Create Issue 22 From File
+      id: step22
       uses: peter-evans/create-issue-from-file@v3
       with:
         title: Set up public holiday service and tests
         content-filepath: issues/issue22_holiday_service_and_tests.md
       
 
-    - name: Create Issue 13 From File
-      id: step13
+    - name: Create Issue 16 From File
+      id: step16
       uses: peter-evans/create-issue-from-file@v3
       with:
         title: Set up location controller and tests
         content-filepath: issues/issue16_location_controller_and_tests.md
       
 
-    - name: Create Issue 14 From File
-      id: step14
+    - name: Create Issue 12 From File
+      id: step12
       uses: peter-evans/create-issue-from-file@v3
       with:
         title: Set up location service and tests
         content-filepath: issues/issue12_location_service_and_tests.md
         
-    - name: Create Issue 15 From File
-      id: step15
+    - name: Create Issue 00 From File
+      id: step00
       uses: peter-evans/create-issue-from-file@v3
       with:
-        title: Set up a team deployments for prod and qa on Heroku
-        content-filepath: issues/issue00_set_up_deployment_on_heroku.md
+        title: Set up a team deployments for prod on Dokku
+        content-filepath: issues/issue00_set_up_team_prod_deployment.md
       

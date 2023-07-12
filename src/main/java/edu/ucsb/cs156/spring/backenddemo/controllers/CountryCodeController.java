@@ -13,11 +13,12 @@ import org.springframework.http.ResponseEntity;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 
-@Api(description="Country Code info from https://public.opendatasoft.com/explore/dataset/countries-codes")
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name="Country Code info from https://public.opendatasoft.com/explore/dataset/countries-codes")
 @Slf4j
 @RestController
 @RequestMapping("/api/countrycodes")
@@ -28,10 +29,10 @@ public class CountryCodeController {
     @Autowired
     CountryCodeQueryService countryCodeQueryService;
 
-    @ApiOperation(value="Get a country's ISO codes and more", notes="Country data uploaded to OpenDataSoft by the International Labour Organization")
+    @Operation(summary="Get a country's ISO codes and more", description ="Country data uploaded to OpenDataSoft by the International Labour Organization")
     @GetMapping("/get")
     public ResponseEntity<String> getCountryCodes(
-        @ApiParam("country, e.g. United States") @RequestParam String country
+        @Parameter(name="country", example="United States") @RequestParam String country
     ) throws JsonProcessingException {
         log.info("getCountryCodes: country={}", country);
         String result = countryCodeQueryService.getJSON(country);
