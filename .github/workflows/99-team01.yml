@@ -10,9 +10,10 @@ jobs:
   createIssues:
     runs-on: ubuntu-latest
     strategy:
+      max-parallel: 1
       matrix:
         api: [ "Location", "Holiday", "Tides", "University", "Zipcode" ]
-        max-parallel: 1
+      
     steps:
     
       - uses: actions/checkout@v3
