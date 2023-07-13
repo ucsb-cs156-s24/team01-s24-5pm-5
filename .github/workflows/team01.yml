@@ -1,103 +1,40 @@
 
-name: Create Issue From File Example Command
+name: Create Issues for team01
 on:
   workflow_dispatch:
 jobs:
   createIssues:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Create Issue 92 From File
-      id: step92
-      uses: peter-evans/create-issue-from-file@v3
-      with:
-        title: Customize Home Controller and Tests
-        content-filepath: issues/issue92_changes_to_README.md
+      - uses: actions/checkout@v3
 
-    - name: Create Issue 90 From File
-      id: step90
-      uses: peter-evans/create-issue-from-file@v3
-      with:
-        title: Update README with correct information in place of TODO
-        content-filepath: issues/issue90_customize_home_controller.md
-
-    - name: Create Issue 66 From File
-      id: step66
-      uses: peter-evans/create-issue-from-file@v3
-      with:
-        title: Set up zipcode controller and tests
-        content-filepath: issues/issue66_zipcode_controller_and_tests.md
-
-    - name: Create Issue 62 From File
-      id: step4
-      uses: peter-evans/create-issue-from-file@v3
-      with:
-        title: Set up zipcode service and tests
-        content-filepath: issues/issue62_zipcode_service_and_tests.md
-
-    - name: Create Issue 56 From File
-      id: step5
-      uses: peter-evans/create-issue-from-file@v3
-      with:
-        title: Set up university controller and tests
-        content-filepath: issues/issue56_university_controller_and_tests.md
-      
-
-    - name: Create Issue 52 From File
-      id: step52
-      uses: peter-evans/create-issue-from-file@v3
-      with:
-        title: Set up university service and tests
-        content-filepath: issues/issue52_university_service_and_tests.md
-      
-    - name: Create Issue 46 From File
-      id: step46
-      uses: peter-evans/create-issue-from-file@v3
-      with:
-        title: Set up tides controller and tests
-        content-filepath: issues/issue46_tides_controller_and_tests.md
-      
-    - name: Create Issue 42 From File
-      id: step42
-      uses: peter-evans/create-issue-from-file@v3
-      with:
-        title: Set up tides service and tests
-        content-filepath: issues/issue42_tides_service_and_tests.md
+      - name: Customize Home Controller and Tests
+        uses: dacbd/create-issue-action@main
+        with:
+          token: ${{ github.token }}
+          title: Customize Home Controller and Tests
+          body: |
+            ## Acceptance criteria
             
-    - name: Create Issue 26 From File
-      id: step26
-      uses: peter-evans/create-issue-from-file@v3
-      with:
-        title: Set up public holiday controller and tests
-        content-filepath: issues/issue26_holiday_controller_and_tests.md
-      
-    - name: Create Issue 22 From File
-      id: step22
-      uses: peter-evans/create-issue-from-file@v3
-      with:
-        title: Set up public holiday service and tests
-        content-filepath: issues/issue22_holiday_service_and_tests.md
-      
+            - [ ] The Home Controller is updated with the names of the team members.
+            - [ ] The Home Controller Tests are updated with the names of the team members.
 
-    - name: Create Issue 16 From File
-      id: step16
-      uses: peter-evans/create-issue-from-file@v3
-      with:
-        title: Set up location controller and tests
-        content-filepath: issues/issue16_location_controller_and_tests.md
-      
-
-    - name: Create Issue 12 From File
-      id: step12
-      uses: peter-evans/create-issue-from-file@v3
-      with:
-        title: Set up location service and tests
-        content-filepath: issues/issue12_location_service_and_tests.md
+            ## Details
+            
+            See: <https://ucsb-cs156.github.io/m23/lab/team01/>, step 3.2
+          
+      - name: Adjust links in README.md
+        uses: dacbd/create-issue-action@main
+        with:
+          token: ${{ github.token }}
+          title: Customize Home Controller and Tests
+          body: |
+            ## Acceptance criteria
+            
+            - [ ] The README.md file is updated with links as specified in the instructions.
+            
+            ## Details
+            
+            See the README.md file in the repo for details.
         
-    - name: Create Issue 00 From File
-      id: step00
-      uses: peter-evans/create-issue-from-file@v3
-      with:
-        title: Set up a team deployments for prod on Dokku
-        content-filepath: issues/issue00_set_up_team_prod_deployment.md
-      
