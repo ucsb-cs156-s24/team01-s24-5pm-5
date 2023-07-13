@@ -9,7 +9,6 @@ Lab instructions: <https://ucsb-cs156.github.io/m23/lab/team01/>
 |-----------|-----------|-----------------------------|---------------------------| 
 |           |           | `LocationQueryService`      | `LocationController`      |   
 |           |           | `PublicHolidayQueryService` | `PublicHolidayController` |   
-|           |           | `RedditQueryService`        | `RedditController`        |   
 |           |           | `TidesQueryService`         | `TidesController`         |   
 |           |           | `UniversityQueryService`    | `UniversityController`    |
 |           |           | `ZipCodeQueryService`       | `ZipCodeController`       |
