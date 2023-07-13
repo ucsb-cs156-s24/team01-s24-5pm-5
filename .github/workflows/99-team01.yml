@@ -96,11 +96,11 @@ jobs:
           body: |
             # Acceptance Criteria:
 
-            - [ ] There is <tt>${{env.name}}Service.java</tt> file in the `src/main/java/edu/ucsb/cs156/spring/backend/services` directory.
-            - [ ] <tt>${{env.name}}Service.java</tt>  implements a class that make a call to the appropriate API
+            - [ ] There is <tt>${{env.name}}QueryService.java</tt> file in the `src/main/java/edu/ucsb/cs156/spring/backend/services` directory.
+            - [ ] <tt>${{env.name}}QueryService.java</tt>  implements a class that make a call to the appropriate API
                   and returns the results.
-            - [ ] There is  <tt>${{env.name}}ServiceTests.java</tt> file in the `src/test/java/edu/ucsb/cs156/spring/backend/services` directory.
-            - [ ] The tests in  <tt>${{env.name}}ServiceTests.java</tt> provide 100% coverage of  <tt>${{env.name}}Service.java</tt> for both jacoco and pitest.
+            - [ ] There is  <tt>${{env.name}}QueryServiceTests.java</tt> file in the `src/test/java/edu/ucsb/cs156/spring/backend/services` directory.
+            - [ ] The tests in  <tt>${{env.name}}QueryServiceTests.java</tt> provide 100% coverage of  <tt>${{env.name}}QueryService.java</tt> for both jacoco and pitest.
                   
             # Details
 
@@ -119,12 +119,12 @@ jobs:
 
             - [ ] There is <tt>${{env.name}}Controller.java</tt> file in the `src/main/java/edu/ucsb/cs156/spring/backend/controllers` directory.
             - [ ] <tt>${{env.name}}Controller.java</tt> implements a class that implements an API endpoint that takes in the necessary
-                  parameters, calls the <tt>${{env.name}}Service</tt>, and returns the results.
+                  parameters, calls the <tt>${{env.name}}QueryService</tt>, and returns the results.
             - [ ] The file  <tt>${{env.name}}Controller.java</tt> file make appropriate use of the 
                   annotations `@Tag`, `@Operation` and `@Parameter` to document the API.
             - [ ] The controller endpoint shows up on the Swagger UI page.
             - [ ] There is a <tt>${{env.name}}ControllerTests.java</tt> file in the `src/test/java/edu/ucsb/cs156/spring/backend/controllers` directory.
-            - [ ] The tests in <tt>${{env.name}}ControllerTests</tt> provide 100% coverage of LocationService.java for both jacoco and pitest.
+            - [ ] The tests in <tt>${{env.name}}ControllerTests</tt> provide 100% coverage of <tt>${{env.name}}Controller</tt> for both jacoco and pitest.
                   
             # Details
 
