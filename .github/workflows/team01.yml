@@ -1,5 +1,9 @@
 
 name: Create Issues for team01
+
+env:
+  ASN_LINK: https://ucsb-cs156.github.io/m23/lab/team01
+
 on:
   workflow_dispatch:
 jobs:
@@ -9,6 +13,99 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+
+      - name: Set up Team prod deployment
+        uses: dacbd/create-issue-action@main
+        with:
+          token: ${{ github.token }}
+          title: Set up Team prod deployment
+          body: |
+            # Acceptance Criteria:
+
+            - [ ] The main branch is deployed on Dokku at, for example,
+                  <http://team01.dokku-xx.cs.ucsb.edu> (substituting your
+                  own Dokku instances for xx).
+            # Details
+
+            See the file /docs/dokku.md in the repo for details.
+
+
+      - name: Add Location Service and Tests
+        uses: dacbd/create-issue-action@main
+        env:
+          name: Location
+        with:
+          token: ${{ github.token }}
+          title: Add ${{env.name}} Service and Tests
+          body: |
+            # Acceptance Criteria:
+
+            - [ ] There is <tt>${{env.name}}Service.java</tt> file in the `src/main/java/edu/ucsb/cs156/spring/backend/services` directory.
+            - [ ] <tt>${{env.name}}Service.java</tt>  implements a class that make a call to the appropriate API
+                  and returns the results.
+            - [ ] There is  <tt>${{env.name}}ServiceTests.java</tt> file in the `src/test/java/edu/ucsb/cs156/spring/backend/services` directory.
+            - [ ] The tests in  <tt>${{env.name}}ServiceTests.java</tt> provide 100% coverage of  <tt>${{env.name}}Service.java</tt> for both jacoco and pitest.
+                  
+            # Details
+
+            See the assignment description at ${{env.ASN_LINK}} for details.
+
+      - name: Add Location Controller and Tests
+        uses: dacbd/create-issue-action@main
+        env:
+          name: Location
+        with:
+          token: ${{ github.token }}
+          title: Add ${{env.name}} Service and Tests
+
+          body: |
+            # Acceptance Criteria:
+
+            - [ ] There is <tt>${{env.name}}Controller.java</tt> file in the `src/main/java/edu/ucsb/cs156/spring/backend/controllers` directory.
+            - [ ] <tt>${{env.name}}Controller.java</tt> implements a class that implements an API endpoint that takes in the necessary
+                  parameters, calls the <tt>${{env.name}}Service</tt>, and returns the results.
+            - [ ] The file  <tt>${{env.name}}Controller.java</tt> file make appropriate use of the 
+                  annotations `@Tag`, `@Operation` and `@Parameter` to document the API.
+            - [ ] The controller endpoint shows up on the Swagger UI page.
+            - [ ] There is a <tt>${{env.name}}ControllerTests.java</tt> file in the `src/test/java/edu/ucsb/cs156/spring/backend/controllers` directory.
+            - [ ] The tests in <tt>${{env.name}}ControllerTests</tt> provide 100% coverage of LocationService.java for both jacoco and pitest.
+                  
+            # Details
+
+            See the assignment description at ${{env.ASN_LINK}} for details.
+
+
+      - name: Set up Team prod deployment
+        uses: dacbd/create-issue-action@main
+        with:
+          token: ${{ github.token }}
+          title: Set up Team prod deployment
+          body: |
+            # Acceptance Criteria:
+
+            - [ ] The main branch is deployed on Dokku at, for example,
+                  <http://team01.dokku-xx.cs.ucsb.edu> (substituting your
+                  own Dokku instances for xx).
+            # Details
+
+            See the file /docs/dokku.md in the repo for details.
+
+
+
+      - name: Adjust links in README.md
+        uses: dacbd/create-issue-action@main
+        with:
+          token: ${{ github.token }}
+          title: Adjust links in README.md
+          body: |
+            ## Acceptance criteria
+            
+            - [ ] The README.md file is updated with links as specified in the instructions.
+            
+            ## Details
+            
+            See the README.md file in the repo for details.
+  
       - name: Customize Home Controller and Tests
         uses: dacbd/create-issue-action@main
         with:
@@ -24,17 +121,4 @@ jobs:
             
             See: <https://ucsb-cs156.github.io/m23/lab/team01/>, step 3.2
           
-      - name: Adjust links in README.md
-        uses: dacbd/create-issue-action@main
-        with:
-          token: ${{ github.token }}
-          title: Customize Home Controller and Tests
-          body: |
-            ## Acceptance criteria
-            
-            - [ ] The README.md file is updated with links as specified in the instructions.
-            
-            ## Details
-            
-            See the README.md file in the repo for details.
-        
+       
