@@ -49,13 +49,10 @@ public class HomeControllerTests {
         String baseUrl = "http://localhost:8080/";
 
         List<String> team = new ArrayList<String>();
-        team.add("Andrew L.");
-        team.add("Bryan T.");
-        team.add("Bryan Z.");
-        team.add("Kevin H.");
-        team.add("Seth V.");
+        team.add("Jing P.");
+        team.add("Christian S.");
+        team.add("Guy W.");
         team.add("Phill C.");
-        team.add("Pranav M.");
         resultMap.put("team",team);
         resultMap.put("repo","https://github.com/ucsb-cs156-m23/STARTER-team01");
         resultMap.put("api-documentation", baseUrl + "swagger-ui/index.html");
