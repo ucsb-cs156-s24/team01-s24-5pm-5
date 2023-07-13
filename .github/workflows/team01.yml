@@ -1,5 +1,5 @@
 
-name: Create Issues for team01
+name: 99 - Create Issues for team01
 
 env:
   ASN_LINK: https://ucsb-cs156.github.io/m23/lab/team01
@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         api: [ "Location", "Holiday", "Tides", "University", "Zipcode" ]
-
+        max-parallel: 1
     steps:
     
       - uses: actions/checkout@v3
