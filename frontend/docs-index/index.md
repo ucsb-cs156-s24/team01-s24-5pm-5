@@ -16,7 +16,7 @@ tbody tr:nth-child(even) {background-color: #f2f2f2;}
 <thead>
 <tr>
 <th colspan="1" style="text-align:center">Backend</th>
-<th colspan="1" style="text-align:center">Frontend</th>
+<!-- <th colspan="1" style="text-align:center">Frontend</th> -->
 </tr>
 <tr>
 <th>Javadoc</th>
