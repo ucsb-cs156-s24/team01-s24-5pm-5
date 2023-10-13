@@ -2,7 +2,7 @@
 name: 99 - Create Issues for team01
 
 env:
-  ASN_LINK: https://ucsb-cs156.github.io/m23/lab/team01
+  ASN_LINK: https://ucsb-cs156.github.io/f23/lab/team01
 
 on:
   workflow_dispatch:
