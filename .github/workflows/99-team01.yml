@@ -3,6 +3,7 @@ name: 99 - Create Issues for team01
 
 env:
   ASN_LINK: https://ucsb-cs156.github.io/f23/lab/team01
+  GH_TOKEN: ${{ github.token }}
 
 on:
   workflow_dispatch:
