@@ -60,9 +60,7 @@ jobs:
       with:
           name: javadoc
           path: ${{ env.destination }}
-  
-  
-  
+
   build-jacoco-main:
     name: c - Jacoco (main)
     runs-on: ubuntu-latest
@@ -105,12 +103,12 @@ jobs:
     - name: Set up Java (version from .java-version file)
       uses: actions/setup-java@v3
       with:
-         distribution: semeru # See: https://github.com/actions/setup-java#supported-distributions
-         java-version-file: ./.java-version
+        distribution: semeru # See: https://github.com/actions/setup-java#supported-distributions
+        java-version-file: ./.java-version
     - name: create directories
       run: |
-         mkdir -p ${{ env.destination }}
-         mkdir -p ${{ env.history_destination }}
+        mkdir -p ${{ env.destination }}
+        mkdir -p ${{ env.history_destination }}
 
     - name: Download artifact
       id: download-artifact
@@ -148,9 +146,7 @@ jobs:
       with:
           name: pitest
           path: ${{ env.destination }}
-
   
-
   a-build-javadoc-for-each-pr:
     name: a - Javadoc (${{ matrix.value.number }}, ${{ matrix.value.headRefName }})
     runs-on: ubuntu-latest
