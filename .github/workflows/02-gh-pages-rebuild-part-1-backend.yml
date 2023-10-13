@@ -111,6 +111,7 @@ jobs:
         mkdir -p ${{ env.history_destination }}
 
     - name: Download artifact
+      continue-on-error: true
       id: download-artifact
       uses: dawidd6/action-download-artifact@v2.27.0
       with:
@@ -136,12 +137,14 @@ jobs:
 
     - name: Upload Pitest History to Artifacts
       if: always() # always upload artifacts, even if tests fail
+      continue-on-error: true
       uses: actions/upload-artifact@v3.1.2
       with:
         name: pitest-main-history.bin
         path: ${{ env.history_destination}}/history.bin
 
     - name: Upload to artifacts
+      continue-on-error: true
       uses: actions/upload-artifact@v3.1.2
       with:
           name: pitest
