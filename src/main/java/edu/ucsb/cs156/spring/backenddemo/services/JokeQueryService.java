@@ -17,7 +17,7 @@ public class JokeQueryService {
 
     public static final String ENDPOINT = "";
 
-    public String getJSON(String location) throws HttpClientErrorException {
+    public String getJSON(String category, int numJokes) throws HttpClientErrorException {
         return "";
     }
 }
