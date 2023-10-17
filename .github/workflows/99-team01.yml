@@ -59,6 +59,22 @@ jobs:
             
             See the assignment description at ${{env.ASN_LINK}} for details.
 
+      - name: Github Pages Setup
+        uses: dacbd/create-issue-action@main
+        with:
+          token: ${{ github.token }}
+          title:  Github Pages Setup
+          body: |
+            ## Acceptance criteria
+            
+            - [ ] Github Pages has been configured to publish from the gh-pages branch, root directory
+            - [ ] The link to the Github pages site has been configured to appear on the main repo page (click the gear icon at right, and select the box for Github Pages)
+            - [ ] The Github Pages site shows the content for javadoc, jacoco, and pitest.
+            
+            ## Details
+            
+            See the file `docs/github-pages.md` for details.
+         
       - name: Submit for Grading
         uses: dacbd/create-issue-action@main
         with:
@@ -67,9 +83,19 @@ jobs:
           body: |
             ## Acceptance criteria
             
-            - [ ] The assignment has been submitted on Gradescope to team01a
-            - [ ] The assignment has been submitted on Gradescope to team01b
-            - [ ] The assignment has been submitted on Canvas
+            - [ ] The team has checked that all six controller endpoints are working
+                  on the dokku deployment, and this is confirmed via a post on the team
+                  channel.
+            - [ ] The team has checked that the Github Pages site is working, and this is
+                  confirmed via a post on the team channel.
+            - [ ] The team has checked that all pending pull requests are merged or closed, and
+                  this is confirmed via a post on the team channel.
+            - [ ] The team has checked that the main branch of the repo is "green on CI", meaning
+                  that the Github Actions runs are not failing (i.e. there is full test coverage
+                  reported by Jacoco, and full mutation coverage via Pitest), and this is confirmed
+                  via a post on the team channel.
+            - [ ] The assignment has been submitted on Canvas, and
+                  this is confirmed via a post on the team channel.
             
             ## Details
             
