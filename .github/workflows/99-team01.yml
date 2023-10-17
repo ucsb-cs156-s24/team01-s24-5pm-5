@@ -81,7 +81,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        api: [ "Location", "Holiday", "Tides", "University", "Zipcode" ]
+        api: [ "Joke", "Location", "Holiday", "Tides", "University", "Zipcode" ]
       
     steps:
     
