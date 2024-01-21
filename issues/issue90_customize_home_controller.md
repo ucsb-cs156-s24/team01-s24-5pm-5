@@ -7,4 +7,4 @@ Update README with correct information in place of TODO
 
 ## Details
 
-See: <https://ucsb-cs156.github.io/f23/lab/team01/> for specific instructions
+See: <https://ucsb-cs156.github.io/w24/lab/team01/> for specific instructions

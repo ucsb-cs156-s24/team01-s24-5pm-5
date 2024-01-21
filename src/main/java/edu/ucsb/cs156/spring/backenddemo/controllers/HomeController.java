@@ -19,11 +19,11 @@ import java.util.Map;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Tag(name="Home Page with links to documentation")
+@Tag(name = "Home Page with links to documentation")
 @Slf4j
 @RestController
 public class HomeController {
-    
+
     @Operation(summary = "Get general info about the server, including link to api documentation")
     @GetMapping("/")
     public ResponseEntity<String> getHome() throws JsonProcessingException {
@@ -35,20 +35,20 @@ public class HomeController {
         String body = getHomePageObjectJSON(uri.toString());
         return ResponseEntity.ok().body(body);
     }
-    
+
     public static String getHomePageObjectJSON(String baseUrl) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
 
         Map<String, Object> resultMap = new HashMap<String, Object>();
-        resultMap.put("greeting","Greetings from Spring Boot!");
+        resultMap.put("greeting", "Greetings from Spring Boot!");
 
         List<String> team = new ArrayList<String>();
         team.add("Jing P.");
         team.add("Christian S.");
         team.add("Guy W.");
         team.add("Phill C.");
-        resultMap.put("team",team);
-        resultMap.put("repo","https://github.com/ucsb-cs156-f23/STARTER-team01");
+        resultMap.put("team", team);
+        resultMap.put("repo", "https://github.com/ucsb-cs156-w24/STARTER-team01");
         resultMap.put("api-documentation", baseUrl + "swagger-ui/index.html");
         return mapper.writeValueAsString(resultMap);
     }

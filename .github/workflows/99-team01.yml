@@ -2,7 +2,7 @@
 name: 99 - Create Issues for team01
 
 env:
-  ASN_LINK: https://ucsb-cs156.github.io/f23/lab/team01
+  ASN_LINK: https://ucsb-cs156.github.io/w24/lab/team01
   GH_TOKEN: ${{ github.token }}
 
 on:
@@ -11,10 +11,10 @@ jobs:
 
   createOneOffIssues:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Set up Team prod deployment
         uses: dacbd/create-issue-action@main
         with:
@@ -37,13 +37,13 @@ jobs:
           title: Adjust links in README.md
           body: |
             ## Acceptance criteria
-            
+
             - [ ] The README.md file is updated with links as specified in the instructions.
-            
+
             ## Details
-            
+
             See the README.md file in the repo for details.
-  
+
       - name: Customize Home Controller and Tests
         uses: dacbd/create-issue-action@main
         with:
@@ -51,12 +51,12 @@ jobs:
           title: Customize Home Controller and Tests
           body: |
             ## Acceptance criteria
-            
+
             - [ ] The Home Controller is updated with the names of the team members.
             - [ ] The Home Controller Tests are updated with the names of the team members.
 
             ## Details
-            
+
             See the assignment description at ${{env.ASN_LINK}} for details.
 
       - name: Github Pages Setup
@@ -66,15 +66,15 @@ jobs:
           title:  Github Pages Setup
           body: |
             ## Acceptance criteria
-            
+
             - [ ] Github Pages has been configured to publish from the gh-pages branch, root directory
             - [ ] The link to the Github pages site has been configured to appear on the main repo page (click the gear icon at right, and select the box for Github Pages)
             - [ ] The Github Pages site shows the content for javadoc, jacoco, and pitest.
-            
+
             ## Details
-            
+
             See the file `docs/github-pages.md` for details.
-         
+
       - name: Submit for Grading
         uses: dacbd/create-issue-action@main
         with:
@@ -82,7 +82,7 @@ jobs:
           title:  Submit for Grading
           body: |
             ## Acceptance criteria
-            
+
             - [ ] The team has checked that all six controller endpoints are working
                   on the dokku deployment, and this is confirmed via a post on the team
                   channel.
@@ -96,11 +96,11 @@ jobs:
                   via a post on the team channel.
             - [ ] The assignment has been submitted on Canvas, and
                   this is confirmed via a post on the team channel.
-            
+
             ## Details
-            
+
             See the assignment description at ${{env.ASN_LINK}} for details.
-          
+
   createIssues:
     needs: [ createOneOffIssues ]
     runs-on: ubuntu-latest
@@ -108,9 +108,9 @@ jobs:
       max-parallel: 1
       matrix:
         api: [ "Joke", "Location", "Holiday", "Tides", "University", "Zipcode" ]
-      
+
     steps:
-    
+
       - uses: actions/checkout@v3
 
       - name: Add Service and Tests
@@ -128,7 +128,7 @@ jobs:
                   and returns the results.
             - [ ] There is  <tt>${{env.name}}QueryServiceTests.java</tt> file in the `src/test/java/edu/ucsb/cs156/spring/backend/services` directory.
             - [ ] The tests in  <tt>${{env.name}}QueryServiceTests.java</tt> provide 100% coverage of  <tt>${{env.name}}QueryService.java</tt> for both jacoco and pitest.
-                  
+
             # Details
 
             See the assignment description at ${{env.ASN_LINK}} for details.
@@ -147,13 +147,13 @@ jobs:
             - [ ] There is <tt>${{env.name}}Controller.java</tt> file in the `src/main/java/edu/ucsb/cs156/spring/backend/controllers` directory.
             - [ ] <tt>${{env.name}}Controller.java</tt> implements a class that implements an API endpoint that takes in the necessary
                   parameters, calls the <tt>${{env.name}}QueryService</tt>, and returns the results.
-            - [ ] The file  <tt>${{env.name}}Controller.java</tt> file make appropriate use of the 
+            - [ ] The file  <tt>${{env.name}}Controller.java</tt> file make appropriate use of the
                   annotations `@Tag`, `@Operation` and `@Parameter` to document the API.
             - [ ] The controller endpoint shows up on the Swagger UI page.
             - [ ] There is a <tt>${{env.name}}ControllerTests.java</tt> file in the `src/test/java/edu/ucsb/cs156/spring/backend/controllers` directory.
             - [ ] The tests in <tt>${{env.name}}ControllerTests</tt> provide 100% coverage of <tt>${{env.name}}Controller</tt> for both jacoco and pitest.
-                  
+
             # Details
 
             See the assignment description at ${{env.ASN_LINK}} for details.
-      
+

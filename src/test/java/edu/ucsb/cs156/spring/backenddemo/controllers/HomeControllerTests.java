@@ -44,7 +44,7 @@ public class HomeControllerTests {
         ObjectMapper mapper = new ObjectMapper();
 
         Map<String, Object> resultMap = new HashMap<String, Object>();
-        resultMap.put("greeting","Greetings from Spring Boot!");
+        resultMap.put("greeting", "Greetings from Spring Boot!");
 
         String baseUrl = "http://localhost:8080/";
 
@@ -53,13 +53,13 @@ public class HomeControllerTests {
         team.add("Christian S.");
         team.add("Guy W.");
         team.add("Phill C.");
-        resultMap.put("team",team);
-        resultMap.put("repo","https://github.com/ucsb-cs156-f23/STARTER-team01");
+        resultMap.put("team", team);
+        resultMap.put("repo", "https://github.com/ucsb-cs156-w24/STARTER-team01");
         resultMap.put("api-documentation", baseUrl + "swagger-ui/index.html");
         String expected = mapper.writeValueAsString(resultMap);
         String actual = HomeController.getHomePageObjectJSON("http://localhost:8080/");
 
         assertEquals(expected, actual);
     }
-    
+
 }
