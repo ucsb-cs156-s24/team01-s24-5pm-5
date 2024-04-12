@@ -1,6 +1,6 @@
 # STARTER-team01
 
-Lab instructions: <https://ucsb-cs156.github.io/w24/lab/team01.html>
+Lab instructions: <https://ucsb-cs156.github.io/s24/lab/team01.html>
 
 * TODO: Update the following table, then delete this line that says "TODO".
 
@@ -17,15 +17,15 @@ Lab instructions: <https://ucsb-cs156.github.io/w24/lab/team01.html>
 
 * TODO: Change the title of this README
   in the text `# STARTER-team01` above
-  to match the name of your repo, i. e., `w24-5pm-2-team01`, then delete
+  to match the name of your repo, i. e., `s24-5pm-2-team01`, then delete
   this TODO item.
 
 * TODO: Correct the links to repo below,
   then delete this TODO.  Replace it with
   a link to your repo, e.g.
-  https://github.com/ucsb-cs156-w24/w24-5pm-2-team01
+  https://github.com/ucsb-cs156-s24/s24-5pm-2-team01
 
-Repo: https://ucsb-cs156-w24/STARTER-team01
+Repo: https://ucsb-cs156-s24/STARTER-team01
 
 * TODO: Correct the links to app on Dokku below,
   then delete this TODO.  Replace it with

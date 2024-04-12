@@ -13,7 +13,7 @@ the entire team):
 
 2. Sync with repo (substitute your own team name):
    ```
-   dokku git:sync team01 https://github.com/ucsb-cs156-w24/team01-w24-9am-4 main
+   dokku git:sync team01 https://github.com/ucsb-cs156-s24/team01-s24-9am-4 main
    ```
 
    We always deploy the `main` branch only on the `team01` deployment, which we consider our "production" deployment (or "prod").  When working in a team environment, it is typical
@@ -39,7 +39,7 @@ deploy branches other than `main` and see what happens.
    ```
 2. Sync with repo (substitute your own team name and branch name):
    ```
-   dokku git:sync https://github.com/ucsb-cs156-w24/team01-w24-9am-4 team01-yourName your-branch-name
+   dokku git:sync https://github.com/ucsb-cs156-s24/team01-s24-9am-4 team01-yourName your-branch-name
    ```
 3. Build app:
    ```
