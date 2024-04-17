@@ -28,7 +28,7 @@ public class JokeQueryServiceTests {
         String category = "UnitedStates";
         String numJokes = "2";
         int numJokesInt = 2;
-        String expectedURL = CountryCodeQueryService.ENDPOINT.replace("{category}", category).replace("{numJokes}", numJokes);
+        String expectedURL = JokeQueryService.ENDPOINT.replace("{category}", category).replace("{numJokes}", numJokes);
 
         String fakeJsonResult = "{ \"fake\" : \"result\" }";
 
