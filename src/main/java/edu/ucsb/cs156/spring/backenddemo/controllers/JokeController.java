@@ -21,7 +21,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @Tag(name="Jokes from https://v2.jokeapi.dev/")
 @Slf4j
 @RestController
-@RequestMapping("/api/jokes/get")
+@RequestMapping("/api/jokes")
 public class JokeController {
 
     ObjectMapper mapper = new ObjectMapper();
