@@ -30,13 +30,15 @@ import org.springframework.web.client.HttpClientErrorException;
 @Service
 public class LocationQueryService {
 
+    ObjectMapper mapper = new ObjectMapper();
+
     private final RestTemplate restTemplate;
 
     public LocationQueryService(RestTemplateBuilder restTemplateBuilder) {
         restTemplate = restTemplateBuilder.build();
     }
 
-    public static final String ENDPOINT = "https://nominatim.openstreetmap.org/search/search.php?q={location}&format=jsonv2";
+    public static final String ENDPOINT = "https://nominatim.openstreetmap.org/search?q={location}&format=jsonv2";
 
     public String getJSON(String location) throws HttpClientErrorException {
         log.info("location={}", location);
