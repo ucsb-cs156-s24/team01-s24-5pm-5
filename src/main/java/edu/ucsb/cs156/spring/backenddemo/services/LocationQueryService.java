@@ -40,7 +40,16 @@ public class LocationQueryService {
 
     public String getJSON(String location) throws HttpClientErrorException {
         log.info("location={}", location);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(List.of(MediaType.APPLICATION_JSON));
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
         Map<String, String> uriVariables = Map.of("location", location);
-        return "";
+
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+
+        ResponseEntity<String> re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class,
+                uriVariables);
+        return re.getBody();
     }
 }
