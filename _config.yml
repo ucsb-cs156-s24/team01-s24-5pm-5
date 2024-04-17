@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-s24/team01-s24-5pm-5
 owner: ucsb-cs156-s24
 repo_name: team01-s24-5pm-5
-pull_requests: [{"author":{"id":"MDQ6VXNlcjYxMzYwOTU1","is_bot":false,"login":"rileychou","name":"Riley Chou"},"headRefName":"Riley-University","number":18,"title":"Add University Service and Controller","url":"https://github.com/ucsb-cs156-s24/team01-s24-5pm-5/pull/18"}]
+pull_requests: [{"author":{"id":"MDQ6VXNlcjM2MTM3NjU0","is_bot":false,"login":"Ononymous","name":"Gen Tamada"},"headRefName":"Gen-Location","number":19,"title":"Add Location Service and Test","url":"https://github.com/ucsb-cs156-s24/team01-s24-5pm-5/pull/19"},{"author":{"id":"MDQ6VXNlcjYxMzYwOTU1","is_bot":false,"login":"rileychou","name":"Riley Chou"},"headRefName":"Riley-University","number":18,"title":"Add University Service and Controller","url":"https://github.com/ucsb-cs156-s24/team01-s24-5pm-5/pull/18"}]
