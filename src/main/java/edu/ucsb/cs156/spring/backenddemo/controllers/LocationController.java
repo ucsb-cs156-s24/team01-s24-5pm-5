@@ -21,7 +21,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 // package edu.ucsb.cs156.spring.backenddemo.controllers;
 
 // import org.springframework.web.bind.annotation.RestController;
-@Tag(name="documentation for location query in https://nominatim.org/release-docs/develop/api/Search/")
+@Tag(name="Location info from nominatim.org")
 @Slf4j
 @RestController
 @RequestMapping("/api/locations")
@@ -32,7 +32,7 @@ public class LocationController {
     @Autowired
     LocationQueryService locationQueryService;
 
-    @Operation(summary = "Get list of locations that match a given location name", description = "getting location information by accessing https://nominatim.openstreetmap.org/search?<params>")
+    @Operation(summary = "Get list of locations that match a given location name", description = "Uses API documented here: https://nominatim.org/release-docs/develop/api/Search/")
     @GetMapping("/get")
     public ResponseEntity<String> getLocations(
         @Parameter(name="location", description="name of the location for search for", example="Isla Vista") @RequestParam String location
