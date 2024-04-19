@@ -34,6 +34,7 @@ public class CountryCodeController {
     public ResponseEntity<String> getCountryCodes(
         @Parameter(name="country", example="United States") @RequestParam String country
     ) throws JsonProcessingException {
+        log.info("getCountryCodes: country={}", country);
         String result = countryCodeQueryService.getJSON(country);
         return ResponseEntity.ok().body(result);
     }

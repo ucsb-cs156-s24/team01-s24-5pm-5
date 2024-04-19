@@ -33,6 +33,7 @@ public class CountryCodeQueryService {
     public static final String ENDPOINT = "https://public.opendatasoft.com/api/records/1.0/search/?dataset=countries-codes&q={country}";
 
     public String getJSON(String country) throws HttpClientErrorException {
+        log.info("country={}", country);
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(List.of(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);

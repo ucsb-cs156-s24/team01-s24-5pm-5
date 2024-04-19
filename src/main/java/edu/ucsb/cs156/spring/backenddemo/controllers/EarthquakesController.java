@@ -35,6 +35,7 @@ public class EarthquakesController {
         @Parameter(name="distance", description="distance in km from Storke Tower", example="100") @RequestParam String distance,
         @Parameter(name="minMag", description="minimum magnitude", example="2.5") @RequestParam String minMag
     ) throws JsonProcessingException {
+        log.info("getEarthquakes: distance={} minMag={}", distance, minMag);
         String result = earthquakeQueryService.getJSON(distance, minMag);
         return ResponseEntity.ok().body(result);
     }
