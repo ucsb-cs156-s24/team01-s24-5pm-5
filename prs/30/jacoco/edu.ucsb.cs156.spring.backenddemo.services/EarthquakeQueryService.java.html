@@ -33,20 +33,21 @@ public class EarthquakeQueryService {
     public static final String ENDPOINT = &quot;https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&amp;minmagnitude={minMag}&amp;maxradiuskm={distance}&amp;latitude={latitude}&amp;longitude={longitude}&quot;;
 
     public String getJSON(String distance, String minMag) throws HttpClientErrorException {
-<span class="fc" id="L36">        HttpHeaders headers = new HttpHeaders();</span>
-<span class="fc" id="L37">        headers.setAccept(List.of(MediaType.APPLICATION_JSON));</span>
-<span class="fc" id="L38">        headers.setContentType(MediaType.APPLICATION_JSON);</span>
+<span class="fc" id="L36">        log.info(&quot;distance={}, minMag={}&quot;, distance, minMag);</span>
+<span class="fc" id="L37">        HttpHeaders headers = new HttpHeaders();</span>
+<span class="fc" id="L38">        headers.setAccept(List.of(MediaType.APPLICATION_JSON));</span>
+<span class="fc" id="L39">        headers.setContentType(MediaType.APPLICATION_JSON);</span>
 
-<span class="fc" id="L40">        HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(headers);</span>
+<span class="fc" id="L41">        HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(headers);</span>
 
-<span class="fc" id="L42">        String ucsbLat = &quot;34.4140&quot;; // hard coded params for Storke Tower</span>
-<span class="fc" id="L43">        String ucsbLong = &quot;-119.8489&quot;;</span>
-<span class="fc" id="L44">        Map&lt;String, String&gt; uriVariables = Map.of(&quot;minMag&quot;, minMag, &quot;distance&quot;, distance, &quot;latitude&quot;, ucsbLat,</span>
+<span class="fc" id="L43">        String ucsbLat = &quot;34.4140&quot;; // hard coded params for Storke Tower</span>
+<span class="fc" id="L44">        String ucsbLong = &quot;-119.8489&quot;;</span>
+<span class="fc" id="L45">        Map&lt;String, String&gt; uriVariables = Map.of(&quot;minMag&quot;, minMag, &quot;distance&quot;, distance, &quot;latitude&quot;, ucsbLat,</span>
                 &quot;longitude&quot;, ucsbLong);
 
-<span class="fc" id="L47">        ResponseEntity&lt;String&gt; re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class,</span>
+<span class="fc" id="L48">        ResponseEntity&lt;String&gt; re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class,</span>
                 uriVariables);
-<span class="fc" id="L49">        return re.getBody();</span>
+<span class="fc" id="L50">        return re.getBody();</span>
     }
 
    

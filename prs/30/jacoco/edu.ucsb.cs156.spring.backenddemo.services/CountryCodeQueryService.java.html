@@ -33,17 +33,18 @@ public class CountryCodeQueryService {
     public static final String ENDPOINT = &quot;https://public.opendatasoft.com/api/records/1.0/search/?dataset=countries-codes&amp;q={country}&quot;;
 
     public String getJSON(String country) throws HttpClientErrorException {
-<span class="fc" id="L36">        HttpHeaders headers = new HttpHeaders();</span>
-<span class="fc" id="L37">        headers.setAccept(List.of(MediaType.APPLICATION_JSON));</span>
-<span class="fc" id="L38">        headers.setContentType(MediaType.APPLICATION_JSON);</span>
+<span class="fc" id="L36">        log.info(&quot;country={}&quot;, country);</span>
+<span class="fc" id="L37">        HttpHeaders headers = new HttpHeaders();</span>
+<span class="fc" id="L38">        headers.setAccept(List.of(MediaType.APPLICATION_JSON));</span>
+<span class="fc" id="L39">        headers.setContentType(MediaType.APPLICATION_JSON);</span>
 
-<span class="fc" id="L40">        Map&lt;String, String&gt; uriVariables = Map.of(&quot;country&quot;, country);</span>
+<span class="fc" id="L41">        Map&lt;String, String&gt; uriVariables = Map.of(&quot;country&quot;, country);</span>
 
-<span class="fc" id="L42">        HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(&quot;body&quot;, headers);</span>
+<span class="fc" id="L43">        HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(&quot;body&quot;, headers);</span>
 
-<span class="fc" id="L44">        ResponseEntity&lt;String&gt; re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class,</span>
+<span class="fc" id="L45">        ResponseEntity&lt;String&gt; re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class,</span>
                 uriVariables);
-<span class="fc" id="L46">        return re.getBody();</span>
+<span class="fc" id="L47">        return re.getBody();</span>
     }
 
 }
