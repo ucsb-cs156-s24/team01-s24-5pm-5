@@ -27,7 +27,6 @@ public class HomeController {
     @Operation(summary = "Get general info about the server, including link to api documentation")
     @GetMapping("/")
     public ResponseEntity<String> getHome() throws JsonProcessingException {
-        log.info("Home Page accessed");
         ServletUriComponentsBuilder builder = ServletUriComponentsBuilder.fromCurrentRequestUri();
         // builder.scheme("http");
         URI uri = builder.build().toUri();

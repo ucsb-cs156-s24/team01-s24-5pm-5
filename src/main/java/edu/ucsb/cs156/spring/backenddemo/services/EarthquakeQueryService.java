@@ -33,7 +33,6 @@ public class EarthquakeQueryService {
     public static final String ENDPOINT = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&minmagnitude={minMag}&maxradiuskm={distance}&latitude={latitude}&longitude={longitude}";
 
     public String getJSON(String distance, String minMag) throws HttpClientErrorException {
-        log.info("distance={}, minMag={}", distance, minMag);
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(List.of(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);
