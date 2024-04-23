@@ -26,7 +26,7 @@ public class PublicHolidayQueryServiceTests {
     public void test_getJSON() {
 
         String year = "2000";
-        String countryCode = "UK";
+        String countryCode = "US";
         String expectedURL = PublicHolidayQueryService.ENDPOINT.replace("{year}", year).replace("{countryCode}", countryCode);
 
         String fakeJsonResult = "{ \"fake\" : \"result\" }";
