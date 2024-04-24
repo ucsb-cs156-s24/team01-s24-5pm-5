@@ -29,12 +29,12 @@ import io.swagger.v3.oas.annotations.tags.Tag;
     @Autowired
     TidesQueryService tidesQueryService;
 
-    @Operation(summary = &quot;Get water level for date range, in local time&quot;, description = &quot;JSON return format documented here: https://api.tidesandcurrents.noaa.gov/api/prod/&quot;)
+    @Operation(summary = &quot;Get water level for date range, in local time&quot;, description = &quot;For station id, see: https://tidesandcurrents.noaa.gov/tide_predictions.html?gid=1393&quot;)
     @GetMapping(&quot;/get&quot;)
     public ResponseEntity&lt;String&gt; getEarthquakes(
         @Parameter(name=&quot;beginDate&quot;, description=&quot;beginDate in format yyyymmdd&quot;, example=&quot;19991210&quot;) @RequestParam String beginDate,
         @Parameter(name=&quot;endDate&quot;, description=&quot;endDate in format yyyymmdd&quot;, example=&quot;19991220&quot;) @RequestParam String endDate,
-        @Parameter(name=&quot;station&quot;, description=&quot;Station #&quot;, example=&quot;9411340 for Santa Barbara&quot;) @RequestParam String station
+        @Parameter(name=&quot;station&quot;, description=&quot;station, e.g. 9411340 for Santa Barbara&quot;, example=&quot;9411340 for Santa Barbara&quot;) @RequestParam String station
     ) throws JsonProcessingException {
         //log.info(&quot;getEarthquakes: distance={} minMag={}&quot;, distance, minMag);
 <span class="fc" id="L40">        String result = tidesQueryService.getJSON(beginDate, endDate, station);</span>
