@@ -29,12 +29,12 @@ public class TidesController {
     @Autowired
     TidesQueryService tidesQueryService;
 
-    @Operation(summary = "Get water level for date range, in local time", description = "JSON return format documented here: https://api.tidesandcurrents.noaa.gov/api/prod/")
+    @Operation(summary = "Get water level for date range, in local time", description = "For station id, see: https://tidesandcurrents.noaa.gov/tide_predictions.html?gid=1393")
     @GetMapping("/get")
     public ResponseEntity<String> getEarthquakes(
         @Parameter(name="beginDate", description="beginDate in format yyyymmdd", example="19991210") @RequestParam String beginDate,
         @Parameter(name="endDate", description="endDate in format yyyymmdd", example="19991220") @RequestParam String endDate,
-        @Parameter(name="station", description="Station #", example="9411340 for Santa Barbara") @RequestParam String station
+        @Parameter(name="station", description="station, e.g. 9411340 for Santa Barbara", example="9411340 for Santa Barbara") @RequestParam String station
     ) throws JsonProcessingException {
         //log.info("getEarthquakes: distance={} minMag={}", distance, minMag);
         String result = tidesQueryService.getJSON(beginDate, endDate, station);
